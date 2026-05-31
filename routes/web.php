@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\ReaderController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/excel', function () {
-    return view('excel');
-});
+Route::get('/excel', [ReaderController::class, 'store'])->name('reader.store');
 
 Route::inertia('/', 'Welcome')->name('home');
 
